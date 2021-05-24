@@ -4,4 +4,8 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-curl -fsSL https://deno.land/x/install/install.sh | sudo DENO_INSTALL=/usr/local sh
+deno_dir="$BUILD_DIR"/deno
+mkdir -p "$deno_dir"
+export DENO_INSTALL="$deno_dir"
+
+curl -fsSL https://deno.land/x/install/install.sh | sh
