@@ -14,7 +14,12 @@ echo "-----> Downloading and installing deno in ${DENO_INSTALL}"
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
 echo "-----> Listing BUILD_DIR ${BUILD_DIR}"
+ls -l "$BUILD_DIR"
 
-ls "$BUILD_DIR"
+echo "-----> Listing DENO_INSTALL ${DENO_INSTALL}"
+ls -l "$DENO_INSTALL"
+
+echo "-----> Listing ${DENO_INSTALL}/bin"
+ls -l "$DENO_INSTALL/bin"
 
 export PATH="$DENO_INSTALL/bin:$PATH"
