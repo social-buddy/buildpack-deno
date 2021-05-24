@@ -5,6 +5,7 @@ CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
 deno_dir="$BUILD_DIR"/deno
+rm -rf "$deno_dir"
 mkdir -p "$deno_dir"
 export DENO_INSTALL="$deno_dir"
 
