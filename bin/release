@@ -1,9 +1,7 @@
 #!/bin/bash
 
-ls -l | sed 's/^/# /' # list files
-
 cat << EOF
 ---
 default_process_types:
-  web: deno run --allow-net index.ts
+  web: deno/bin/deno run --allow-net index.ts
 EOF
