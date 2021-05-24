@@ -3,5 +3,5 @@
 cat << EOF
 ---
 default_process_types:
-  web: deno/bin/deno run --allow-net index.ts
+  web: ls; deno/bin/deno run --allow-net index.ts
 EOF
