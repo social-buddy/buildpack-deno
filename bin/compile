@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir>
 
-BUILD_DIR=${1:-}
+BUILD_DIR=${1:-} # will be the location of the app
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
@@ -9,6 +10,11 @@ rm -rf "$deno_dir"
 mkdir -p "$deno_dir"
 export DENO_INSTALL="$deno_dir"
 
+echo "-----> Downloading and installing deno in ${DENO_INSTALL}"
 curl -fsSL https://deno.land/x/install/install.sh | sh
+
+echo "-----> Listing BUILD_DIR ${BUILD_DIR}"
+
+ls "$BUILD_DIR"
 
 export PATH="$DENO_INSTALL/bin:$PATH"
